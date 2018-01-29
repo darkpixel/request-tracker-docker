@@ -19,8 +19,6 @@ RT::Extension::BounceEmail \
 RT::Action::SetPriorityFromHeader \
 && rm -rf /root/.cpan
 
-RUN apk add --update gettext
-
 WORKDIR /opt/rt4
 COPY RT_SiteConfig.pm ./etc/RT_SiteConfig.pm.template
 EXPOSE 80

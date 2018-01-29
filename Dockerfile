@@ -21,6 +21,7 @@ RT::Action::SetPriorityFromHeader \
 
 COPY RT_SiteConfig.pm /tmp/RT_SiteConfig.pm
 COPY msmtprc /tmp/msmtprc
+COPY fetchmailrc /tmp/fetchmailrc
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY msmtp-sendmail.sh /usr/local/bin/msmtp-sendmail.sh
 

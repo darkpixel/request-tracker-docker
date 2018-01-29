@@ -18,7 +18,7 @@ case ${1} in
 ;;
 '--fetchmail'*)
   chmod 0700 /etc/fetchmailrc
-  fetchmail -f /etc/fetchmailrc
+  fetchmail -f /etc/fetchmailrc --nodetach
 ;;
 '--debug'*)
   echo debug

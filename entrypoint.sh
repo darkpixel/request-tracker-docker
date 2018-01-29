@@ -5,6 +5,8 @@ envsubst '\$DATABASE_HOST \$DATABASE_USER \$DATABASE_PASSWORD \$RT_NAME \$OWNER_
 
 envsubst '\$MAIL_HOST \$MAIL_PORT \$MAIL_USER \$MAIL_PASS \$CORRESPOND_ADDRESS' < /tmp/msmtprc > /etc/msmtprc
 
+envsubst '\$WEB_BASE_URL \$MAIL_FETCH_LOGIN \$MAIL_FETCH_PASSWORD \$MAIL_FETCH_FOLDER \$MAIL_FETCH_COMMENT_FOLDER \$OWNER_EMAIL' < /tmp/fetchmailrc > /etc/fetchmailrc
+
 case ${1} in
 '--web'*)
   echo Starting RT webserver
@@ -15,8 +17,8 @@ case ${1} in
   exec /usr/sbin/crond -f -m $OWNER_EMAIL
 ;;
 '--fetchmail'*)
-  echo fetch
-  exec fetchmail
+  chmod 0700 /etc/fetchmailrc
+  fetchmail -f /etc/fetchmailrc
 ;;
 '--debug'*)
   echo debug

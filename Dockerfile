@@ -1,4 +1,4 @@
-FROM darkpixel/request-tracker-docker-base:latest
+FROM darkpixel/request-tracker-docker-base:0.8.2
 LABEL maintainer="Aaron C. de Bruyn <aaron@heyaaron.com>"
 
 WORKDIR /opt/src
@@ -19,12 +19,12 @@ RT::Extension::BounceEmail \
 RT::Action::SetPriorityFromHeader \
 && rm -rf /root/.cpan
 
+COPY RT_SiteConfig.pm /tmp/RT_SiteConfig.pm
+COPY msmtprc /tmp/msmtprc
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY msmtp-sendmail.sh /usr/local/bin/msmtp-sendmail.sh
+
 WORKDIR /opt/rt4
-COPY RT_SiteConfig.pm ./etc/RT_SiteConfig.pm.template
+
 EXPOSE 80
-CMD envsubst '\$DATABASE_HOST \$DATABASE_USER \$DATABASE_PASSWORD \$RT_NAME \$OWNER_EMAIL \$WEB_DOMAIN \$WEB_BASE_URL \
-  \$CORRESPOND_ADDRESS \$COMMENT_ADDRESS \$DATABASE_PORT \$WEB_PORT \$LOGO_URL \$LOGO_LINK_URL \$TIMEZONE \
-  \$WEB_SECURE_COOKIES' \
-  < /opt/rt4/etc/RT_SiteConfig.pm.template \
-  > /opt/rt4/etc/RT_SiteConfig.pm \
-  && /opt/rt4/sbin/rt-server --port 80
+ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]

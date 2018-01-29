@@ -1,6 +1,7 @@
 use utf8;
 
 # Set($SendmailPath , "/opt/rt4/etc/msmtp_wrapper");
+Set($SendmailPath , "/usr/local/bin/msmtp-sendmail.sh");
 
 Set($DatabaseType, "Pg");
 Set($DatabaseHost,   "${DATABASE_HOST}");

@@ -71,7 +71,7 @@ Set($HomepageComponents, [qw(
     RefreshHomepage
 )]);
 
-%RT::ServiceAgreements = (
+Set(%ServiceAgreements,
     AssumeOutsideActor => 1,
     Default => 'normal',
     QueueDefault => {
@@ -94,7 +94,8 @@ Set($HomepageComponents, [qw(
         },
     },
 );
-%RT::ServiceBusinessHours = (
+
+Set(%ServiceBusinessHours,
     'standard' => {
         0 => { Name => 'Sunday', Start => 'undef', End => 'undef' },
         1 => { Name => 'Monday', Start => '7:00', End => '18:00' },

@@ -95,7 +95,7 @@ Set(%ServiceAgreements,
     },
 );
 
-%RT::ServiceBusinessHours = (
+Set(%ServiceBusinessHours,
     'standard' => {
         0 => { Name => 'Sunday', Start => 'undef', End => 'undef' },
         1 => { Name => 'Monday', Start => '7:00', End => '18:00' },

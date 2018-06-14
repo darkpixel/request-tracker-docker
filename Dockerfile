@@ -1,4 +1,4 @@
-FROM darkpixel/request-tracker-docker-base:0.8.5
+FROM darkpixel/request-tracker-docker-base:0.8.6
 LABEL maintainer="Aaron C. de Bruyn <aaron@heyaaron.com>"
 
 WORKDIR /opt/src

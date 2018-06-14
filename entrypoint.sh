@@ -10,7 +10,7 @@ envsubst '\$WEB_BASE_URL \$MAIL_FETCH_LOGIN \$MAIL_FETCH_PASSWORD \$MAIL_FETCH_F
 case ${1} in
 '--web'*)
   echo Starting RT webserver
-  exec /opt/rt4/sbin/rt-server --port 80
+  exec /opt/rt4/sbin/rt-server --server Starman --port 80
 ;;
 '--cron'*)
   echo cron

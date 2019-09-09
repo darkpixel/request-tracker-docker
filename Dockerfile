@@ -19,6 +19,8 @@ RT::Extension::BounceEmail \
 RT::Action::SetPriorityFromHeader \
 && rm -rf /root/.cpan
 
+RUN c_rehash /usr/share/ca-certificates/mozilla
+
 COPY RT_SiteConfig.pm /tmp/RT_SiteConfig.pm
 COPY msmtprc /tmp/msmtprc
 COPY fetchmailrc /tmp/fetchmailrc

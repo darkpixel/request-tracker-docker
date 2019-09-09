@@ -2,8 +2,8 @@ FROM darkpixel/request-tracker-docker-base:0.8.7
 LABEL maintainer="Aaron C. de Bruyn <aaron@heyaaron.com>"
 
 WORKDIR /opt/src
-RUN curl -sLS "https://download.bestpractical.com/pub/rt/release/rt-4.4.2.tar.gz" | tar --strip-components=1 -xvzf - \
-&& ./configure --enable-graphviz --enable-gd --with-db-type=Pg --with-db-host=database \
+RUN curl -sLS "https://download.bestpractical.com/pub/rt/release/rt-4.4.4.tar.gz" | tar --strip-components=1 -xvzf - \
+&& ./configure --enable-graphviz --enable-gd --with-db-type=Pg --with-db-host=database --enable-externalauth \
 && make testdeps && make install
 
 RUN PERL_MM_USE_DEFAULT=1 cpan install \

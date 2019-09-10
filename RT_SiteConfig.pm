@@ -9,7 +9,7 @@ Set($DatabaseHost,   "${DATABASE_HOST}");
 Set($DatabasePort, "${DATABASE_PORT}");
 Set($DatabaseUser, "${DATABASE_USER}");
 Set($DatabasePassword, q{${DATABASE_PASSWORD}});
-Set($DatabaseName, q{support});
+Set($DatabaseName, q{${DATABASE_NAME}});
 #Set(%DatabaseExtraDSN, sslmode => 'require' );
 
 Set($rtname, '${RT_NAME}');

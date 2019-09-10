@@ -41,8 +41,8 @@ Set( %FullTextSearch,
 # Plugin('RT::Extension::ActivityReports');
 # Plugin('RT::Extension::AdminConditionsAndActions');
 
-Plugin('RT::Extension::Announce');
-Set(@CustomFieldValuesSources, (qw(RT::CustomFieldValues::AnnounceGroups)));
+#Plugin('RT::Extension::Announce');
+#Set(@CustomFieldValuesSources, (qw(RT::CustomFieldValues::AnnounceGroups)));
 
 Plugin('RT::Extension::Gravatar');
 Plugin('RT::Extension::MergeUsers');

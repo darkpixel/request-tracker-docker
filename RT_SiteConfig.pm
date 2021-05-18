@@ -1,6 +1,6 @@
 use utf8;
 
-# Set($SendmailPath , "/opt/rt4/etc/msmtp_wrapper");
+# Set($SendmailPath , "/opt/rt5/etc/msmtp_wrapper");
 Set($SendmailPath , "/usr/local/bin/msmtp-sendmail.sh");
 Set($LogToScreen, 'info');
 

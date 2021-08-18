@@ -50,11 +50,11 @@ Plugin('RT::Extension::Gravatar');
 #Plugin('RT::Extension::QuickUpdate');
 #Plugin('RT::Extension::RepeatTicket');
 #Plugin('RT::Extension::RepliesToResolved');
-Plugin('RT::Extension::ResetPassword');
+#Plugin('RT::Extension::ResetPassword');
 #Plugin('RT::Extension::REST2');
-Plugin('RT::Extension::TicketLocking');
-Plugin('RT::Extension::BounceEmail');
-Plugin('RT::Action::SetPriorityFromHeader');
+##Plugin('RT::Extension::TicketLocking');
+#Plugin('RT::Extension::BounceEmail');
+#Plugin('RT::Action::SetPriorityFromHeader');
 
 Set($PriorityHeader, 'X-Priority');
 Set(%PriorityMap, highest => 1, high => 2, normal => 3, low => 4, lowest => 5);

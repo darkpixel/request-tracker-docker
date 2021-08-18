@@ -10,7 +10,7 @@ Set($DatabasePort, "${DATABASE_PORT}");
 Set($DatabaseUser, "${DATABASE_USER}");
 Set($DatabasePassword, q{${DATABASE_PASSWORD}});
 Set($DatabaseName, q{${DATABASE_NAME}});
-#Set(%DatabaseExtraDSN, sslmode => 'require' );
+Set(%DatabaseExtraDSN, sslmode => 'require' );
 
 Set($rtname, '${RT_NAME}');
 Set($OwnerEmail, '${OWNER_EMAIL}');
@@ -45,10 +45,10 @@ Set( %FullTextSearch,
 #Set(@CustomFieldValuesSources, (qw(RT::CustomFieldValues::AnnounceGroups)));
 
 Plugin('RT::Extension::Gravatar');
-Plugin('RT::Extension::MergeUsers');
+#Plugin('RT::Extension::MergeUsers');
 #Plugin('RT::Extension::QuickAssign');
-Plugin('RT::Extension::QuickUpdate');
-Plugin('RT::Extension::RepeatTicket');
+#Plugin('RT::Extension::QuickUpdate');
+#Plugin('RT::Extension::RepeatTicket');
 #Plugin('RT::Extension::RepliesToResolved');
 Plugin('RT::Extension::ResetPassword');
 #Plugin('RT::Extension::REST2');

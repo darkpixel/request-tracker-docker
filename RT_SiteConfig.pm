@@ -18,6 +18,7 @@ Set($Organization, '${RT_NAME}');
 Set($WebDomain, '${WEB_DOMAIN}');
 Set($Timezone, '${TIMEZONE}');
 Set($WebPort, '${WEB_PORT}');
+Set($WebBase, '${WEB_URL}');
 Set($WebBaseURL, '${WEB_BASE_URL}');
 #Set($WebSecureCookies, 1);
 Set($CanonicalizeRedirectURLs, 1);

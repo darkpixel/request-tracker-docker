@@ -46,9 +46,8 @@ Set( %FullTextSearch,
 #Set(@CustomFieldValuesSources, (qw(RT::CustomFieldValues::AnnounceGroups)));
 
 Plugin('RT::Extension::Gravatar');
-#Plugin('RT::Extension::MergeUsers');
+Plugin('RT::Extension::MergeUsers');
 #Plugin('RT::Extension::QuickAssign');
-#Plugin('RT::Extension::QuickUpdate');
 #Plugin('RT::Extension::RepeatTicket');
 #Plugin('RT::Extension::RepliesToResolved');
 #Plugin('RT::Extension::ResetPassword');

@@ -1,6 +1,6 @@
 use utf8;
 
-# Set($SendmailPath , "/opt/rt4/etc/msmtp_wrapper");
+# Set($SendmailPath , "/opt/rt5/etc/msmtp_wrapper");
 Set($SendmailPath , "/usr/local/bin/msmtp-sendmail.sh");
 Set($LogToScreen, 'info');
 
@@ -10,7 +10,7 @@ Set($DatabasePort, "${DATABASE_PORT}");
 Set($DatabaseUser, "${DATABASE_USER}");
 Set($DatabasePassword, q{${DATABASE_PASSWORD}});
 Set($DatabaseName, q{${DATABASE_NAME}});
-#Set(%DatabaseExtraDSN, sslmode => 'require' );
+Set(%DatabaseExtraDSN, sslmode => 'require' );
 
 Set($rtname, '${RT_NAME}');
 Set($OwnerEmail, '${OWNER_EMAIL}');
@@ -18,6 +18,7 @@ Set($Organization, '${RT_NAME}');
 Set($WebDomain, '${WEB_DOMAIN}');
 Set($Timezone, '${TIMEZONE}');
 Set($WebPort, '${WEB_PORT}');
+Set($WebBase, '${WEB_URL}');
 Set($WebBaseURL, '${WEB_BASE_URL}');
 #Set($WebSecureCookies, 1);
 Set($CanonicalizeRedirectURLs, 1);
@@ -41,20 +42,19 @@ Set( %FullTextSearch,
 # Plugin('RT::Extension::ActivityReports');
 # Plugin('RT::Extension::AdminConditionsAndActions');
 
-Plugin('RT::Extension::Announce');
-Set(@CustomFieldValuesSources, (qw(RT::CustomFieldValues::AnnounceGroups)));
+#Plugin('RT::Extension::Announce');
+#Set(@CustomFieldValuesSources, (qw(RT::CustomFieldValues::AnnounceGroups)));
 
 Plugin('RT::Extension::Gravatar');
 Plugin('RT::Extension::MergeUsers');
 #Plugin('RT::Extension::QuickAssign');
-Plugin('RT::Extension::QuickUpdate');
-Plugin('RT::Extension::RepeatTicket');
+#Plugin('RT::Extension::RepeatTicket');
 #Plugin('RT::Extension::RepliesToResolved');
-Plugin('RT::Extension::ResetPassword');
+#Plugin('RT::Extension::ResetPassword');
 #Plugin('RT::Extension::REST2');
-Plugin('RT::Extension::TicketLocking');
-Plugin('RT::Extension::BounceEmail');
-Plugin('RT::Action::SetPriorityFromHeader');
+##Plugin('RT::Extension::TicketLocking');
+#Plugin('RT::Extension::BounceEmail');
+#Plugin('RT::Action::SetPriorityFromHeader');
 
 Set($PriorityHeader, 'X-Priority');
 Set(%PriorityMap, highest => 1, high => 2, normal => 3, low => 4, lowest => 5);

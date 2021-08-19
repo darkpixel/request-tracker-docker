@@ -1,4 +1,12 @@
 
+v0.9.3 / 2021-08-19
+==================
+
+  * Update to RT5
+  * Remove a bunch of legacy plugins
+  * Enable MergeUsers
+  * Add WEB_URL env var
+
 v0.9.2 / 2019-09-09
 ==================
 

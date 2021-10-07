@@ -1,4 +1,10 @@
 
+1.0.0 / 2021-10-07
+==================
+
+  * Allow launching commands after running envsubst
+  * Stop runing cronjobs and fetchmail through entrypoint, use k8s CronJob definitions with new --cmd option
+
 v0.9.5 / 2021-08-19
 ==================
 

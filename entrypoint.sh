@@ -12,19 +12,7 @@ case ${1} in
   echo Starting RT webserver
   exec /opt/rt5/sbin/rt-server --server Starman --port 80
 ;;
-'--cron'*)
-  echo cron
-  exec /usr/sbin/crond -f -m $OWNER_EMAIL
-;;
-'--fetchmail'*)
-  chmod 0700 /etc/fetchmailrc
-  fetchmail -f /etc/fetchmailrc --nodetach
-;;
-'--debug'*)
-  echo debug
-  exec sh
-;;
 *)
-  echo You must pass --web --cron or --fetchmail as a parameter
+  echo If you want to start the webserver pass --web
 ;;
 esac

@@ -12,6 +12,10 @@ case ${1} in
   echo Starting RT webserver
   exec /opt/rt5/sbin/rt-server --server Starman --port 80
 ;;
+'--cmd'*)
+  echo Running command ${@:6}
+  ${@:6}
+;;
 *)
   echo If you want to start the webserver pass --web
 ;;

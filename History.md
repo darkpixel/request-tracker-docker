@@ -1,5 +1,10 @@
 
-1.0.0 / 2021-10-07
+v1.0.1 / 2021-10-07
+==================
+
+  * Fix bad fetchmail permissions
+
+v1.0.0 / 2021-10-07
 ==================
 
   * Allow launching commands after running envsubst

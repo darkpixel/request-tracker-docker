@@ -13,6 +13,9 @@ case ${1} in
   echo Starting RT webserver
   exec /opt/rt5/sbin/rt-server --server Starman --port 80
 ;;
+'--fetchmail'*)
+  fetchmail -f /etc/fetchmailrc --nodetach || [ $? -eq 1 ]
+;;
 '--cmd'*)
   echo Running command ${@:6}
   ${@:6}

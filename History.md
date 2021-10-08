@@ -1,4 +1,9 @@
 
+v1.0.2 / 2021-10-08
+==================
+
+  * Add --fetchmail arg for proper handling of exit code 1
+
 v1.0.1 / 2021-10-07
 ==================
 

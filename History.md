@@ -1,4 +1,11 @@
 
+v2.0.0 / 2021-10-28
+==================
+
+  * Support for running container securely as rtuser (ID 1000)
+  * Bind to unprivileged port
+  * Touch msmtprc and fetchmailrc so rtuser can write them
+
 v1.0.2 / 2021-10-08
 ==================
 

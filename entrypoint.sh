@@ -11,7 +11,7 @@ chmod 0700 /etc/fetchmailrc
 case ${1} in
 '--web'*)
   echo Starting RT webserver
-  exec /opt/rt5/sbin/rt-server --server Starman --port 80
+  exec /opt/rt5/sbin/rt-server --server Starman --port 8000
 ;;
 '--fetchmail'*)
   fetchmail -f /etc/fetchmailrc --nodetach || [ $? -eq 1 ]

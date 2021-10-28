@@ -22,6 +22,10 @@ COPY msmtp-sendmail.sh /usr/local/bin/msmtp-sendmail.sh
 WORKDIR /opt/rt5
 RUN adduser -D -h /opt/rt5 -s /bin/sh -u 1000 rtuser
 RUN chown -R rtuser /opt/rt5
+RUN touch /etc/msmtprc
+RUN touch /etc/fetchmailrc
+RUN chown -R rtuser /etc/msmtprc
+RUN chown -R rtuser /etc/fetchmailrc
 USER rtuser:rtuser
 
 EXPOSE 80

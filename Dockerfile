@@ -22,7 +22,7 @@ COPY msmtp-sendmail.sh /usr/local/bin/msmtp-sendmail.sh
 WORKDIR /opt/rt5
 RUN adduser -D -h /opt/rt5 -s /bin/sh -u 1000 rtuser
 RUN chown -R rtuser /opt/rt5
-USER rtuser
+USER rtuser:rtuser
 
 EXPOSE 80
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]

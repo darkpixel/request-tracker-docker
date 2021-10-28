@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repo-token: ${{ secrets.MY_TOKEN }}
+          token: ${{ secrets.MY_TOKEN }}
 
       - name: Build docker image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME

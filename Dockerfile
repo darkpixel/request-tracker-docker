@@ -19,7 +19,7 @@ COPY fetchmailrc /tmp/fetchmailrc
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY msmtp-sendmail.sh /usr/local/bin/msmtp-sendmail.sh
 
-RUN useradd -r -d /opt/rt5 -s /bin/sh -c "RT User" rtuser
+RUN adduser -D -h /opt/rt5 -s /bin/sh rtuser
 RUN chown -R rtuser: /opt/rt5
 USER rtuser
 

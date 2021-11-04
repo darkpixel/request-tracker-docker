@@ -6,6 +6,9 @@ RUN curl -sLS "https://download.bestpractical.com/pub/rt/release/rt-5.0.1.tar.gz
 && ./configure --enable-graphviz --enable-gd --with-db-type=Pg --with-db-host=database --enable-externalauth \
 && make testdeps && make install
 
+RUN curl -sLS "https://download.bestpractical.com/pub/rt/release/RT-IR-5.0.1.tar.gz" | tar --strip-components=1 -xvzf - \
+&& perl Makefile.PL && make install
+
 RUN PERL_MM_USE_DEFAULT=1 cpan install \
 RT::Extension::Gravatar \
 RT::Extension::MergeUsers \

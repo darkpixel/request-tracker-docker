@@ -13,6 +13,11 @@ case ${1} in
   echo Starting RT webserver
   exec /opt/rt5/sbin/rt-server --server Starman --port 8000
 ;;
+'--rtir'*)
+  echo Starting RTIR webserver
+  echo "Plugin('RT::IR');" >> /opt/rt5/etc/RT_SiteConfig.pm
+  exec /opt/rt5/sbin/rt-server --server Starman --port 8000
+;;
 '--fetchmail'*)
   fetchmail -f /etc/fetchmailrc --nodetach || [ $? -eq 1 ]
 ;;

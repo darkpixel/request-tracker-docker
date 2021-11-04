@@ -13,13 +13,21 @@ case ${1} in
   echo Starting RT webserver
   exec /opt/rt5/sbin/rt-server --server Starman --port 8000
 ;;
+
 '--fetchmail'*)
   fetchmail -f /etc/fetchmailrc --nodetach || [ $? -eq 1 ]
 ;;
+
+'--init-rtir'*)
+  cd /opt/src/rtir
+  /opt/rt5/sbin/rt-setup-database --action insert --datadir etc --datafile etc/initialdata --package RT::IR
+;;
+
 '--cmd'*)
   echo Running command ${@:6}
   ${@:6}
 ;;
+
 *)
   echo If you want to start the webserver pass --web
 ;;

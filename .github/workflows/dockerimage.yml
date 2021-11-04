@@ -4,7 +4,7 @@ env:
   IMAGE_NAME: request-tracker-docker
 jobs:
   ghr_push:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v2

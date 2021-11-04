@@ -47,6 +47,7 @@ Set( %FullTextSearch,
 
 Plugin('RT::Extension::Gravatar');
 Plugin('RT::Extension::MergeUsers');
+Plugin('RT::IR');
 #Plugin('RT::Extension::QuickAssign');
 #Plugin('RT::Extension::RepeatTicket');
 #Plugin('RT::Extension::RepliesToResolved');

@@ -1,4 +1,4 @@
-FROM ghcr.io/darkpixel/request-tracker-docker-base/request-tracker-docker-base:dev
+FROM ghcr.io/darkpixel/request-tracker-docker-base/request-tracker-docker-base:develop
 LABEL maintainer="Aaron C. de Bruyn <aaron@heyaaron.com>"
 
 WORKDIR /opt/src

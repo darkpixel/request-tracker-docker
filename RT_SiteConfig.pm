@@ -26,6 +26,8 @@ Set($CorrespondAddress, '${CORRESPOND_ADDRESS}');
 Set($CommentAddress, '${COMMENT_ADDRESS}');
 Set($TimeInICal, 1);
 Set($ShowUnreadMessageNotifications, 1);
+Set($ParseNewMessageForTicketCcs, 1);
+
 
 Set($HTMLFormatter, 'w3m');
 
@@ -47,6 +49,7 @@ Set( %FullTextSearch,
 
 Plugin('RT::Extension::Gravatar');
 Plugin('RT::Extension::MergeUsers');
+Plugin('RT::IR');
 #Plugin('RT::Extension::QuickAssign');
 #Plugin('RT::Extension::RepeatTicket');
 #Plugin('RT::Extension::RepliesToResolved');

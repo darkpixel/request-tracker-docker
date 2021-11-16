@@ -26,6 +26,8 @@ Set($CorrespondAddress, '${CORRESPOND_ADDRESS}');
 Set($CommentAddress, '${COMMENT_ADDRESS}');
 Set($TimeInICal, 1);
 Set($ShowUnreadMessageNotifications, 1);
+Set($ParseNewMessageForTicketCcs, 1);
+
 
 Set($HTMLFormatter, 'w3m');
 

@@ -1,4 +1,10 @@
 
+v2.0.1 / 2021-11-16
+==================
+
+  * Automatically add CCs to ticket
+  * Add an option to start in RTIR mode
+
 v2.0.0 / 2021-10-28
 ==================
 

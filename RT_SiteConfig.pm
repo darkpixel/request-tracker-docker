@@ -74,6 +74,7 @@ Set($HomepageComponents, [qw(
     SavedSearches
     QuickCreate
     RefreshHomepage
+    QuickCalls
 )]);
 
 Set($QuickCalls,[{Name => "PW Reset", Queue => 'general', Status => 'resolved'},

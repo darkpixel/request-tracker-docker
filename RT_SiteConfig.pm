@@ -45,18 +45,19 @@ Set( %FullTextSearch,
 # Plugin('RT::Extension::ActivityReports');
 # Plugin('RT::Extension::AdminConditionsAndActions');
 
-#Plugin('RT::Extension::Announce');
+Plugin('RT::Extension::Announce');
 #Set(@CustomFieldValuesSources, (qw(RT::CustomFieldValues::AnnounceGroups)));
 
 Plugin('RT::Extension::Gravatar');
 Plugin('RT::Extension::MergeUsers');
 Plugin('RT::IR');
+Plugin('RT::Extension::QuickCalls');
 #Plugin('RT::Extension::QuickAssign');
 #Plugin('RT::Extension::RepeatTicket');
 #Plugin('RT::Extension::RepliesToResolved');
 #Plugin('RT::Extension::ResetPassword');
 #Plugin('RT::Extension::REST2');
-##Plugin('RT::Extension::TicketLocking');
+Plugin('RT::Extension::TicketLocking');
 #Plugin('RT::Extension::BounceEmail');
 #Plugin('RT::Action::SetPriorityFromHeader');
 
@@ -73,7 +74,11 @@ Set($HomepageComponents, [qw(
     SavedSearches
     QuickCreate
     RefreshHomepage
+    QuickCalls
 )]);
+
+Set($QuickCalls,[{Name => "PW Reset", Queue => 'general', Status => 'resolved'},
+                 {Name => "Acct Unlock", Queue => 'general',  Status => 'resolved'}]);
 
 Set(%ServiceAgreements,
     AssumeOutsideActor => 1,

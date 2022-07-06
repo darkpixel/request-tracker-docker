@@ -27,8 +27,8 @@ Set($CommentAddress, '${COMMENT_ADDRESS}');
 Set($TimeInICal, 1);
 Set($ShowUnreadMessageNotifications, 1);
 Set($ParseNewMessageForTicketCcs, 1);
-Set($SquelchList, $ENV{'EMAIL_SQUELCH_LIST'});
-Set($SquelchedRecipients, $ENV{'EMAIL_SQUELCH_LIST'});
+#Set($SquelchList, $ENV{'EMAIL_SQUELCH_LIST'});
+#Set($SquelchedRecipients, $ENV{'EMAIL_SQUELCH_LIST'});
 
 
 Set($HTMLFormatter, 'w3m');

@@ -61,6 +61,8 @@ Plugin('RT::Extension::TicketLocking');
 #Plugin('RT::Extension::BounceEmail');
 #Plugin('RT::Action::SetPriorityFromHeader');
 
+Set( $LockExpiry, 5*60 );
+
 Set($PriorityHeader, 'X-Priority');
 Set(%PriorityMap, highest => 1, high => 2, normal => 3, low => 4, lowest => 5);
 
@@ -77,8 +79,8 @@ Set($HomepageComponents, [qw(
     QuickCalls
 )]);
 
-Set($QuickCalls,[{Name => "PW Reset", Queue => 'general', Status => 'resolved'},
-                 {Name => "Acct Unlock", Queue => 'general',  Status => 'resolved'}]);
+Set($QuickCalls,[{Name => "PW Reset", Queue => 'general', Status => 'closed'},
+                 {Name => "Acct Unlock", Queue => 'general',  Status => 'closed'}]);
 
 Set(%ServiceAgreements,
     AssumeOutsideActor => 1,

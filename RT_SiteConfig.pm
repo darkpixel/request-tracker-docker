@@ -79,8 +79,11 @@ Set($HomepageComponents, [qw(
     QuickCalls
 )]);
 
-Set($QuickCalls,[{Name => "PW Reset", Queue => 'general', Status => 'closed'},
-                 {Name => "Acct Unlock", Queue => 'general',  Status => 'closed'}]);
+Set($QuickCalls,[
+    {Name => "PW Reset", Queue => 'general', Status => 'closed'},
+    {Name => "Acct Unlock", Queue => 'general',  Status => 'closed'}
+    {Name => "Vendor Connect", Queue => 'general',  Status => 'closed'}
+  ]);
 
 Set(%ServiceAgreements,
     AssumeOutsideActor => 1,

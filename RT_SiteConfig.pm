@@ -81,7 +81,7 @@ Set($HomepageComponents, [qw(
 
 Set($QuickCalls,[
     {Name => "PW Reset", Queue => 'general', Status => 'closed'},
-    {Name => "Acct Unlock", Queue => 'general',  Status => 'closed'}
+    {Name => "Acct Unlock", Queue => 'general',  Status => 'closed'},
     {Name => "Vendor Connect", Queue => 'general',  Status => 'closed'}
   ]);
 

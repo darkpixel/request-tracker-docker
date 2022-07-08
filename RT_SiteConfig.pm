@@ -59,7 +59,6 @@ Plugin('RT::Extension::RepliesToResolved');
 #Plugin('RT::Extension::REST2');
 Plugin('RT::Extension::TicketLocking');
 Plugin('RT::Extension::ShowTransactionSquelching');
-Plugin('RT::Extension::TodoList');
 Plugin('RT::Extension::ActivityReports');
 #Plugin('RT::Extension::BounceEmail');
 #Plugin('RT::Action::SetPriorityFromHeader');

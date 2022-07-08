@@ -54,14 +54,24 @@ Plugin('RT::IR');
 Plugin('RT::Extension::QuickCalls');
 #Plugin('RT::Extension::QuickAssign');
 #Plugin('RT::Extension::RepeatTicket');
-#Plugin('RT::Extension::RepliesToResolved');
+Plugin('RT::Extension::RepliesToResolved');
 #Plugin('RT::Extension::ResetPassword');
 #Plugin('RT::Extension::REST2');
 Plugin('RT::Extension::TicketLocking');
+Plugin('RT::Extension::ShowTransactionSquelching');
+Plugin('RT::Extension::TodoList');
+Plugin('RT::Extension::ActivityReports');
 #Plugin('RT::Extension::BounceEmail');
 #Plugin('RT::Action::SetPriorityFromHeader');
 
 Set( $LockExpiry, 5*60 );
+Set(%RepliesToResolved,
+   default => {
+     'closed-status-list' => [ qw(closed rejected deleted) ],
+     'reopen-timelimit' => 3,
+     'link-type' => 'RefersTo',
+   },
+);
 
 Set($PriorityHeader, 'X-Priority');
 Set(%PriorityMap, highest => 1, high => 2, normal => 3, low => 4, lowest => 5);

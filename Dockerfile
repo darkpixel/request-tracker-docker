@@ -16,6 +16,10 @@ RT::Extension::MergeUsers \
 RT::Extension::Announce \
 RT::Extension::TicketLocking \
 RT::Extension::QuickCalls \
+RT::Extension::ShowTransactionSquelching \
+RT::Extension::TodoList \
+RT::Extension::ActivityReports \
+RT::Extension::RepliesToResolved \
 && rm -rf /root/.cpan
 
 RUN c_rehash /usr/share/ca-certificates/mozilla

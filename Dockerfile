@@ -1,8 +1,8 @@
-FROM ghcr.io/darkpixel/request-tracker-docker-base/request-tracker-docker-base:develop
+FROM ghcr.io/darkpixel/request-tracker-docker-base/request-tracker-docker-base:0.9.6
 LABEL maintainer="Aaron C. de Bruyn <aaron@heyaaron.com>"
 
 WORKDIR /opt/src/rt/
-RUN curl -sLS "https://download.bestpractical.com/pub/rt/release/rt-5.0.1.tar.gz" | tar --strip-components=1 -xvzf - \
+RUN curl -sLS "https://download.bestpractical.com/pub/rt/release/rt-5.0.2.tar.gz" | tar --strip-components=1 -xvzf - \
 && ./configure --enable-graphviz --enable-gd --with-db-type=Pg --with-db-host=database --enable-externalauth \
 && make testdeps && make install
 
@@ -13,6 +13,12 @@ RUN curl -sLS "https://download.bestpractical.com/pub/rt/release/RT-IR-5.0.1.tar
 RUN PERL_MM_USE_DEFAULT=1 cpan install \
 RT::Extension::Gravatar \
 RT::Extension::MergeUsers \
+RT::Extension::Announce \
+RT::Extension::TicketLocking \
+RT::Extension::QuickCalls \
+RT::Extension::ShowTransactionSquelching \
+RT::Extension::ActivityReports \
+RT::Extension::RepliesToResolved \
 && rm -rf /root/.cpan
 
 RUN c_rehash /usr/share/ca-certificates/mozilla

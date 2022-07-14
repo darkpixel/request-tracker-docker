@@ -27,6 +27,7 @@ Set($CommentAddress, '${COMMENT_ADDRESS}');
 Set($TimeInICal, 1);
 Set($ShowUnreadMessageNotifications, 1);
 Set($ParseNewMessageForTicketCcs, 1);
+Set($SquelchList, $ENV{'EMAIL_SQUELCH_LIST'});
 
 
 Set($HTMLFormatter, 'w3m');
@@ -50,14 +51,26 @@ Set( %FullTextSearch,
 Plugin('RT::Extension::Gravatar');
 Plugin('RT::Extension::MergeUsers');
 Plugin('RT::IR');
+Plugin('RT::Extension::QuickCalls');
 #Plugin('RT::Extension::QuickAssign');
 #Plugin('RT::Extension::RepeatTicket');
-#Plugin('RT::Extension::RepliesToResolved');
+Plugin('RT::Extension::RepliesToResolved');
 #Plugin('RT::Extension::ResetPassword');
 #Plugin('RT::Extension::REST2');
-##Plugin('RT::Extension::TicketLocking');
+Plugin('RT::Extension::TicketLocking');
+Plugin('RT::Extension::ShowTransactionSquelching');
+Plugin('RT::Extension::ActivityReports');
 #Plugin('RT::Extension::BounceEmail');
 #Plugin('RT::Action::SetPriorityFromHeader');
+
+Set( $LockExpiry, 5*60 );
+Set(%RepliesToResolved,
+   default => {
+     'closed-status-list' => [ qw(closed rejected deleted) ],
+     'reopen-timelimit' => 3,
+     'link-type' => 'RefersTo',
+   },
+);
 
 Set($PriorityHeader, 'X-Priority');
 Set(%PriorityMap, highest => 1, high => 2, normal => 3, low => 4, lowest => 5);
@@ -72,7 +85,14 @@ Set($HomepageComponents, [qw(
     SavedSearches
     QuickCreate
     RefreshHomepage
+    QuickCalls
 )]);
+
+Set($QuickCalls,[
+    {Name => "Password Reset", Queue => 'general', Status => 'closed'},
+    {Name => "Account Unlock", Queue => 'general',  Status => 'closed'},
+    {Name => "Vendor Connect", Queue => 'general',  Status => 'closed'}
+  ]);
 
 Set(%ServiceAgreements,
     AssumeOutsideActor => 1,

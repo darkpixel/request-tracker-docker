@@ -1,4 +1,13 @@
 
+v2.0.2 / 2022-07-14
+==================
+
+  * Add ShowTransactionSquelching, ActivityReports, RepliesToResolved
+  * Adjust QuickCall names
+  * Add vendor quick call
+  * Add ticket locking
+  * Updated request-tracker-docker-base
+
 v2.0.1 / 2021-11-16
 ==================
 

@@ -28,7 +28,7 @@ Set($TimeInICal, 1);
 Set($ShowUnreadMessageNotifications, 1);
 Set($ParseNewMessageForTicketCcs, 1);
 Set($SquelchList, $ENV{'EMAIL_SQUELCH_LIST'});
-
+Set($SuppressInlineTextFiles, 0);
 
 Set($HTMLFormatter, 'w3m');
 

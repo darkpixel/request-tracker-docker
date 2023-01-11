@@ -1,4 +1,9 @@
 
+v2.0.4 / 2023-01-11
+==================
+
+  * Add a basic README file to help people get started
+
 v2.0.3 / 2023-01-11
 ==================
 
